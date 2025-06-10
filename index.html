@@ -6,24 +6,29 @@
   <title>HRTB Updates</title>
   <!-- Tailwind via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Hero background -->
+  <!-- Google font for a professional look -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Hero background and custom palette -->
   <style>
     .hero-bg {
       background: url('https://images.unsplash.com/photo-1591856977188-36f22f13c590?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
     }
+    body { font-family: 'Open Sans', sans-serif; }
+    .ohchr-blue { background-color: #005aa9; }
+    .text-ohchr { color: #005aa9; }
   </style>
 </head>
 <body class="font-sans antialiased text-gray-800">
 
   <!-- Navbar -->
-  <header class="fixed w-full bg-white/70 backdrop-blur z-50">
-    <div class="max-w-4xl mx-auto flex justify-between items-center p-4">
-      <h1 class="text-xl font-bold">HRTB Updates</h1>
+  <header class="fixed w-full ohchr-blue text-white/90 backdrop-blur z-50">
+    <div class="max-w-5xl mx-auto flex justify-between items-center p-4">
+      <h1 class="text-xl font-semibold">Human Rights Treaty Bodies</h1>
       <nav class="space-x-6">
-        <a href="#what" class="hover:text-blue-600">What is HRTB?</a>
-        <a href="#reports" class="hover:text-blue-600">Latest Reports</a>
-        <a href="#sessions" class="hover:text-blue-600">Upcoming Sessions</a>
-        <a href="#subscribe" class="hover:text-blue-600">Subscribe</a>
+        <a href="#what" class="text-white hover:underline">What is HRTB?</a>
+        <a href="#reports" class="text-white hover:underline">Latest Reports</a>
+        <a href="#sessions" class="text-white hover:underline">Upcoming Sessions</a>
+        <a href="#subscribe" class="text-white hover:underline">Subscribe</a>
       </nav>
     </div>
   </header>
@@ -116,6 +121,26 @@
       </div>
     </section>
 
+    <!-- Recent Treaty Documents from dataset -->
+    <section id="documents" class="max-w-5xl mx-auto px-4">
+      <h3 class="text-3xl font-bold mb-6 text-center text-ohchr">Recent Treaty Body Documents</h3>
+      <div class="overflow-x-auto shadow ring-1 ring-gray-200 rounded-lg">
+        <table class="min-w-full divide-y divide-gray-300 text-sm" id="dataset-table">
+          <thead class="bg-gray-50">
+            <tr>
+              <th class="p-2 text-left">Treaty</th>
+              <th class="p-2 text-left">Country</th>
+              <th class="p-2 text-left">Type</th>
+              <th class="p-2 text-left">Submit</th>
+              <th class="p-2 text-left">Published</th>
+              <th class="p-2 text-left">Link</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
     <!-- Subscribe -->
     <section id="subscribe" class="max-w-2xl mx-auto px-4 text-center">
       <h3 class="text-3xl font-bold mb-4">Stay Informed</h3>
@@ -140,6 +165,25 @@
       <p>Built by Alper Bektaş</p>
     </div>
   </footer>
+
+  <script>
+    fetch('data_sample.json')
+      .then(r => r.json())
+      .then(data => {
+        const tbody = document.querySelector('#dataset-table tbody');
+        data.forEach(rec => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td class="border-b p-2">${rec.ReportingCycle}</td>
+            <td class="border-b p-2">${rec.TreatyCode}</td>
+            <td class="border-b p-2">${rec.CountryName}</td>
+            <td class="border-b p-2">${rec.SubmitDate}</td>
+            <td class="border-b p-2">${rec.PublicationDate}</td>
+            <td class="border-b p-2"><a href="${rec.Symbol_No}" class="text-blue-600 underline" target="_blank">View</a></td>`;
+          tbody.appendChild(tr);
+        });
+      });
+  </script>
 
 </body>
 </html>
