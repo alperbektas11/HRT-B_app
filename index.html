@@ -1,91 +1,145 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>HRTB Updates</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Reveal core CSS from CDN -->
-  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.5.0/dist/reveal.css">
-  <!-- Reveal theme from CDN -->
-  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.5.0/dist/theme/white.css">
-  <!-- Your custom overrides -->
-  <link rel="stylesheet" href="assets/css/custom.css">
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Hero background -->
+  <style>
+    .hero-bg {
+      background: url('https://images.unsplash.com/photo-1591856977188-36f22f13c590?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+    }
+  </style>
 </head>
-<body>
-  <div class="reveal">
-    <div class="slides">
+<body class="font-sans antialiased text-gray-800">
 
-      <!-- Slide 1: Title -->
-      <section>
-        <h1>Human Rights Treaty Body Updates</h1>
-        <p>An interactive presentation rebuilt in HTML</p>
-      </section>
-
-      <!-- Slide 2: Contents -->
-      <section>
-        <h2>Contents</h2>
-        <ul>
-          <li>What is HRTB?</li>
-          <li>Latest Reports</li>
-          <li>Upcoming Sessions</li>
-          <li>How to Subscribe</li>
-        </ul>
-      </section>
-
-      <!-- Slide 3: What is HRTB? -->
-      <section>
-        <h2>What is HRTB?</h2>
-        <ul>
-          <li>Monitoring bodies for UN human rights treaties</li>
-          <li>Made up of independent experts from around the world</li>
-          <li>Review state compliance and issue recommendations</li>
-        </ul>
-      </section>
-
-      <!-- Slide 4: Latest Report Highlights -->
-      <section>
-        <h2>Latest Report Highlights</h2>
-        <p><strong>March 2025 Session Key Findings:</strong></p>
-        <ul>
-          <li>Increased participation by civil society organizations</li>
-          <li>Notable progress on gender equality measures</li>
-          <li>Areas for improvement: data collection and transparency</li>
-        </ul>
-      </section>
-
-      <!-- Slide 5: Upcoming Sessions -->
-      <section data-background-color="#f0f0f0">
-        <h2>Upcoming HRTB Sessions</h2>
-        <ul>
-          <li>June 15–19, 2025: Human Rights Committee</li>
-          <li>July 2–6, 2025: Committee on the Elimination of Discrimination</li>
-          <li>August 12–16, 2025: Committee on the Rights of the Child</li>
-        </ul>
-      </section>
-
-      <!-- Slide 6: How to Subscribe -->
-      <section>
-        <h2>How to Subscribe</h2>
-        <p>Stay informed by:</p>
-        <ul>
-          <li>Visiting the <a href="https://www.ohchr.org">OHCHR website</a> and subscribing to treaty body newsletters</li>
-          <li>Following @UNHumanRights on social media</li>
-          <li>Joining our mailing list: <a href="mailto:subscribe@hrtupdates.org">subscribe@hrtupdates.org</a></li>
-        </ul>
-      </section>
-
+  <!-- Navbar -->
+  <header class="fixed w-full bg-white/70 backdrop-blur z-50">
+    <div class="max-w-4xl mx-auto flex justify-between items-center p-4">
+      <h1 class="text-xl font-bold">HRTB Updates</h1>
+      <nav class="space-x-6">
+        <a href="#what" class="hover:text-blue-600">What is HRTB?</a>
+        <a href="#reports" class="hover:text-blue-600">Latest Reports</a>
+        <a href="#sessions" class="hover:text-blue-600">Upcoming Sessions</a>
+        <a href="#subscribe" class="hover:text-blue-600">Subscribe</a>
+      </nav>
     </div>
-  </div>
+  </header>
 
-  <!-- Reveal core JS from CDN -->
-  <script src="https://unpkg.com/reveal.js@4.5.0/dist/reveal.js"></script>
-  <script>
-    Reveal.initialize({
-      hash: true,
-      slideNumber: true,
-      transition: 'fade'
-    });
-  </script>
+  <!-- Hero Section -->
+  <section class="hero-bg h-screen flex items-center justify-center text-center text-white px-4">
+    <div class="bg-black/40 p-8 rounded-xl">
+      <h2 class="text-4xl md:text-6xl font-extrabold mb-4">Human Rights Treaty Body Updates</h2>
+      <p class="text-lg md:text-2xl">All you need to know, at a glance</p>
+    </div>
+  </section>
+
+  <main class="space-y-24 py-16">
+
+    <!-- What is HRTB -->
+    <section id="what" class="max-w-4xl mx-auto px-4">
+      <h3 class="text-3xl font-bold mb-6 text-center">What is HRTB?</h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-6 bg-white shadow-lg rounded-lg">
+          <h4 class="font-semibold mb-2">Mandate</h4>
+          <p>Monitoring bodies for UN human rights treaties, reviewing state compliance.</p>
+        </div>
+        <div class="p-6 bg-white shadow-lg rounded-lg">
+          <h4 class="font-semibold mb-2">Composition</h4>
+          <p>Independent experts from around the world, serving in their personal capacity.</p>
+        </div>
+        <div class="p-6 bg-white shadow-lg rounded-lg">
+          <h4 class="font-semibold mb-2">Outcome</h4>
+          <p>Issue recommendations and general comments to guide states and civil society.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Latest Reports -->
+    <section id="reports" class="max-w-4xl mx-auto px-4">
+      <h3 class="text-3xl font-bold mb-6 text-center">Latest Report Highlights</h3>
+      <div class="space-y-8">
+        <div class="p-6 bg-white shadow-lg rounded-lg">
+          <h4 class="text-xl font-semibold mb-2">March 2025 Key Findings</h4>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Increased participation by civil society organizations</li>
+            <li>Notable progress on gender equality measures</li>
+            <li>Need for improved data collection and transparency</li>
+          </ul>
+        </div>
+        <div class="p-6 bg-white shadow-lg rounded-lg">
+          <h4 class="text-xl font-semibold mb-2">Recommendations</h4>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Strengthen national reporting mechanisms</li>
+            <li>Enhance capacity-building for civil society</li>
+            <li>Improve access to disaggregated data</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Upcoming Sessions -->
+    <section id="sessions" class="max-w-4xl mx-auto px-4">
+      <h3 class="text-3xl font-bold mb-6 text-center">Upcoming HRTB Sessions</h3>
+      <div class="space-y-6">
+        <div class="flex items-start space-x-4">
+          <div class="mt-1">
+            <span class="block w-4 h-4 bg-blue-600 rounded-full"></span>
+            <span class="block w-0.5 h-full bg-gray-300 mx-auto"></span>
+          </div>
+          <div>
+            <p class="font-semibold">June 15–19, 2025</p>
+            <p>Human Rights Committee</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="mt-1">
+            <span class="block w-4 h-4 bg-green-600 rounded-full"></span>
+            <span class="block w-0.5 h-full bg-gray-300 mx-auto"></span>
+          </div>
+          <div>
+            <p class="font-semibold">July 2–6, 2025</p>
+            <p>Committee on the Elimination of Discrimination</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="mt-1">
+            <span class="block w-4 h-4 bg-purple-600 rounded-full"></span>
+          </div>
+          <div>
+            <p class="font-semibold">August 12–16, 2025</p>
+            <p>Committee on the Rights of the Child</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Subscribe -->
+    <section id="subscribe" class="max-w-2xl mx-auto px-4 text-center">
+      <h3 class="text-3xl font-bold mb-4">Stay Informed</h3>
+      <p class="mb-6">Get the latest treaty body updates delivered straight to your inbox.</p>
+      <form class="flex flex-col sm:flex-row gap-4 justify-center">
+        <input type="email" placeholder="Your email address" required
+               class="flex-1 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <button type="submit"
+                class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition">
+          Subscribe
+        </button>
+      </form>
+      <p class="mt-4 text-sm text-gray-500">We respect your privacy. Unsubscribe anytime.</p>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300 py-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p>&copy; 2025 HRTB Updates. All rights reserved.</p>
+      <p>Built by Alper Bektaş</p>
+    </div>
+  </footer>
+
 </body>
 </html>
