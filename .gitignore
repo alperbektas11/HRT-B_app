@@ -1,4 +1,3 @@
-cat > .gitignore << 'EOF'
 # Node & Reveal build artifacts
 node_modules/
 .DS_Store
@@ -8,4 +7,3 @@ __pycache__/
 
 # Mac/Linux temp files
 *~
-EOF
